@@ -1,6 +1,8 @@
 import NewArrayBtn from "./ControlComponents/NewArrayBtn";
 import SizeSlider from "./ControlComponents/SizeSlider";
 import DelaySlider from "./ControlComponents/DelaySlider";
+import AlgoSelector from "./ControlComponents/AlgoSelector";
+import PlayButton from "./ControlComponents/PlayButton";
 
 function Controls() {
   return (
@@ -9,6 +11,8 @@ function Controls() {
         <NewArrayBtn />
         <SizeSlider />
         <DelaySlider />
+        <AlgoSelector />
+        <PlayButton />
       </div>
     </div>
   );

@@ -3,7 +3,7 @@ import { useAlgoStore } from "../../utils/store";
 function NewArrayBtn() {
   const size = useAlgoStore.getState().size;
   const newArray = () => {
-    useAlgoStore.getState().setSize(size);
+    useAlgoStore.getState().setSize(useAlgoStore.getState().size);
   };
 
   return (

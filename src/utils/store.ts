@@ -14,6 +14,7 @@ interface State {
 const defaultSize = 100;
 const defaultDelay = 10;
 const defaultMaxValue = 100;
+const defaultStates = new Array<number>(defaultSize).fill(0);
 const defaultValues = randomArray(defaultSize);
 const defaultAlgorithm = "bubbleSort";
 
@@ -21,6 +22,8 @@ const defaultAlgorithm = "bubbleSort";
 export const useAlgoStore = create<AlgoState>((set, get) => ({
   isSorted: false,
   isSorting: false,
+  isAnimating: false,
+  states: defaultStates,
   algorithm: defaultAlgorithm,
   size: defaultSize,
   maxValue: defaultMaxValue,

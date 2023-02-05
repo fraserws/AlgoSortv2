@@ -13,7 +13,7 @@ function Bars() {
           key={index}
           style={{
             width: `${100 / array.length}%`,
-            height: `${value}vh`,
+            height: `${value * 0.75}vh`,
           }}
         ></div>
       ))}

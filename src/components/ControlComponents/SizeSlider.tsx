@@ -1,12 +1,14 @@
 import { useState } from "react";
 import { useAlgoStore } from "../../utils/store";
 import { GoGraph } from "react-icons/go";
+import zustand from "zustand";
 
 function SizeSlider() {
-  const [size, setSize] = useState(useAlgoStore.getState().size);
+  //@ts-ignore
+  const size = useAlgoStore((state) => state.size);
 
-  const newArray = () => {
-    useAlgoStore.getState().setSize(size);
+  const handleSliderSize = (e: React.ChangeEvent<HTMLInputElement>) => {
+    useAlgoStore.getState().setSize(e.target.value);
   };
 
   return (
@@ -16,11 +18,8 @@ function SizeSlider() {
         type="range"
         min="10"
         max={useAlgoStore.getState().maxSize}
-        onChange={(e) => {
-          setSize(e.target.value);
-          useAlgoStore.getState().setSize(e.target.value);
-        }}
         value={size}
+        onChange={handleSliderSize}
         className="range max-w-sm"
       />
       <h1 className="text-2xl">{size}</h1>
