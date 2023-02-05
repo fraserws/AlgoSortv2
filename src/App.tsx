@@ -1,11 +1,14 @@
 import { useState } from "react";
-import reactLogo from "./assets/react.svg";
 import Bars from "./components/Bars";
+import Controls from "./components/Controls";
 
 function App() {
-  const [count, setCount] = useState(0);
-
-  return <Bars />;
+  return (
+    <div className="grid grid-rows-6  h-screen bg-base-100">
+      <Bars />
+      <Controls />
+    </div>
+  );
 }
 
 export default App;

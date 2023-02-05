@@ -28,8 +28,11 @@ export const useAlgoStore = create<AlgoState>((set, get) => ({
   array: defaultValues,
   setAlgorithm: (algorithm: string) => set({ algorithm }),
   setDelay: (delay: number) => set({ delay }),
-  setSize: (size: number) => {
-    const array = randomArray(size);
-    set({ size, array });
+  setSize: (newSize: number) => {
+    if (newSize < 1) {
+      newSize = get().size;
+    }
+    set({ size: newSize });
+    set({ array: randomArray(newSize) });
   },
 }));
