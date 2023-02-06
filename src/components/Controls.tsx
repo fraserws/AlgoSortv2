@@ -1,8 +1,8 @@
-import NewArrayBtn from "./ControlComponents/NewArrayBtn";
-import SizeSlider from "./ControlComponents/SizeSlider";
-import DelaySlider from "./ControlComponents/DelaySlider";
 import AlgoSelector from "./ControlComponents/AlgoSelector";
+import DelaySlider from "./ControlComponents/DelaySlider";
+import NewArrayBtn from "./ControlComponents/NewArrayBtn";
 import PlayButton from "./ControlComponents/PlayButton";
+import SizeSlider from "./ControlComponents/SizeSlider";
 
 function Controls() {
   return (
@@ -10,6 +10,7 @@ function Controls() {
       <div className="flex lg:flex-row flex-col gap-10">
         <NewArrayBtn />
         <SizeSlider />
+        <DelaySlider />
         <PlayButton />
         <AlgoSelector />
       </div>

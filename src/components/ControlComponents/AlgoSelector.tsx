@@ -1,11 +1,5 @@
-import React from "react";
 import { algorithms } from "../../utils/array";
 import useAlgoStore from "../../utils/store";
-
-//export const algorithms = new Map([
-//  ["Bubble Sort", bubbleSort],
-// ["Bogo Sort", bogoSort],
-//]);
 
 function AlgoSelector() {
   const names: string[] = [];
@@ -24,7 +18,6 @@ function AlgoSelector() {
         }}
       >
         {names.map((name, key) => (
-          //make option expand to top if on mobile
           <option key={key} value={name} className="option" aria-label={name}>
             {name}
           </option>

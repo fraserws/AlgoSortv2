@@ -1,11 +1,7 @@
-import { swap } from "../../utils/array";
-import useAlgoStore from "../../utils/store";
 import { AiOutlineReload } from "react-icons/ai";
-
-const array = useAlgoStore.getState().array;
+import useAlgoStore from "../../utils/store";
 
 function NewArrayBtn() {
-  const size = useAlgoStore.getState().size;
   const newArray = () => {
     useAlgoStore.getState().setSize(useAlgoStore.getState().size);
   };

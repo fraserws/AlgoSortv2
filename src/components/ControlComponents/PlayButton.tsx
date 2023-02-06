@@ -1,13 +1,8 @@
-import { useEffect, useState } from "react";
-import { FiPlay, FiPause } from "react-icons/fi";
-import useAlgoStore from "../../utils/store";
+import { FiPause, FiPlay } from "react-icons/fi";
 import { sort } from "../../utils/array";
-
-const isSorted = useAlgoStore.getState().isSorted;
+import useAlgoStore from "../../utils/store";
 
 function PlayButton() {
-  const [isPlaying, setIsPlaying] = useState(false);
-  //@ts-ignore
   const isAnimating = useAlgoStore((state) => state.isAnimating);
   const playPause = async () => {
     useAlgoStore.setState({ isAnimating: !isAnimating });
@@ -45,6 +40,7 @@ function PlayButton() {
   return (
     <div className="flex-row flex items-center ">
       <button
+        aria-label="New Array"
         className="btn btn-accent new-array-button text-black flex w-full"
         onClick={playPause}
       >

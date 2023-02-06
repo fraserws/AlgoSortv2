@@ -1,10 +1,9 @@
-import useAlgoStore from "../utils/store";
 import { motion } from "framer-motion";
+import useAlgoStore from "../utils/store";
 
 function Bars() {
   const array = useAlgoStore((state) => state.array);
   const states = useAlgoStore((state) => state.states);
-  const isSorted = useAlgoStore((state) => state.isSorted);
 
   return (
     <div
@@ -30,7 +29,6 @@ function Bars() {
               height: `${value * 0.75}vh`,
               backgroundColor: backgroundColor,
             }}
-            //animate the bar
             initial={{ height: 0 }}
             animate={{ height: `${value * 0.75}vh` }}
             transition={{ duration: 0.3 }}

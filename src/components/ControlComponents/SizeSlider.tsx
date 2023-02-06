@@ -1,10 +1,7 @@
-import { useState } from "react";
-import useAlgoStore from "../../utils/store";
 import { GoGraph } from "react-icons/go";
-import zustand from "zustand";
+import useAlgoStore from "../../utils/store";
 
 function SizeSlider() {
-  //@ts-ignore
   const size = useAlgoStore((state) => state.size);
 
   const maxsize = window.screen.width < 640 ? 40 : 100;
