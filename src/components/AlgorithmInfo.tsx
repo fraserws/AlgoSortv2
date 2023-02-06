@@ -21,14 +21,19 @@ function AlgorithmInfo() {
   return (
     <div className="w-screen pt-3 pr-3">
       <div className="flex flex-row justify-end items-center">
-        <a
-          href={algorithmLink}
-          target="_blank"
-          rel="noreferrer"
-          aria-label="Algorithm Info"
+        <div
+          className="tooltip tooltip-left"
+          data-tip="Link to Wikipedia article"
         >
-          <AiOutlineQuestionCircle className="text-2xl " />
-        </a>
+          <a
+            href={algorithmLink}
+            target="_blank"
+            rel="noreferrer"
+            aria-label="Algorithm Info"
+          >
+            <AiOutlineQuestionCircle className="text-2xl " />
+          </a>
+        </div>
       </div>
     </div>
   );
