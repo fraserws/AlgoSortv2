@@ -20,6 +20,7 @@ function AlgoSelector() {
         className="select"
         onChange={(e) => {
           useAlgoStore.setState({ algorithm: e.target.value as string });
+          useAlgoStore.getState().setSize(useAlgoStore.getState().size);
         }}
       >
         {names.map((name) => (

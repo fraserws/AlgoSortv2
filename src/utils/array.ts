@@ -1,12 +1,12 @@
 import useAlgoStore from "./store";
 import bubbleSort from "./algorithms/bubble-sort";
-import bogoSort from "./algorithms/bogo-sort";
 import runMergeSort from "./algorithms/merge-sort";
+import insertionSort from "./algorithms/insertion-sort";
 
 export const algorithms = new Map([
   ["Bubble Sort", bubbleSort],
-  ["Bogo Sort", bogoSort],
   ["Merge Sort", runMergeSort],
+  ["Insertion Sort", insertionSort],
 ]);
 
 export const randomArray = (length: number): number[] => {
