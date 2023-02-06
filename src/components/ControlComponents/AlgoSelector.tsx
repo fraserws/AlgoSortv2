@@ -23,8 +23,11 @@ function AlgoSelector() {
           useAlgoStore.getState().setSize(useAlgoStore.getState().size);
         }}
       >
-        {names.map((name) => (
-          <option value={name}>{name}</option>
+        {names.map((name, key) => (
+          //make option expand to top if on mobile
+          <option key={key} value={name} className="option" aria-label={name}>
+            {name}
+          </option>
         ))}
       </select>
     </div>

@@ -7,7 +7,7 @@ function SizeSlider() {
   //@ts-ignore
   const size = useAlgoStore((state) => state.size);
 
-  const maxsize = 100;
+  const maxsize = window.screen.width < 640 ? 40 : 100;
 
   return (
     <div className="flex-row flex items-center ">

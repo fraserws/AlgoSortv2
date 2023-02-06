@@ -16,7 +16,7 @@ function NewArrayBtn() {
         onClick={newArray}
         //buttons do not have accesible names
         aria-label="New Array"
-        className="btn btn-secondary new-array-button text-black"
+        className="btn btn-secondary new-array-button text-black flex w-full"
       >
         <AiOutlineReload className="text-2xl" />
       </button>

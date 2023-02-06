@@ -46,7 +46,7 @@ function PlayButton() {
   return (
     <div className="pt-1">
       <button
-        className="btn play-pause-button  "
+        className="btn play-pause-button flex w-full "
         onClick={() => {
           setIsPlaying(!isPlaying);
           playPause();
