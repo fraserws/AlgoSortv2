@@ -3,6 +3,9 @@
 A sorting visualizer build with react
 
 ---
+## Live site
+<https://sort.fraserws.dev/>
+
 ## Demo
 
 
