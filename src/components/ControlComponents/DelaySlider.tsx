@@ -1,6 +1,6 @@
-import { useAlgoStore } from "../../utils/store";
 import { RiTimeFill } from "react-icons/ri";
 import { useState } from "react";
+import useAlgoStore from "../../utils/store";
 
 function DelaySlider() {
   const [delay, setDelay] = useState(useAlgoStore.getState().delay);
@@ -14,10 +14,7 @@ function DelaySlider() {
         min="0"
         max="500"
         value={delay}
-        onChange={(e) => {
-          setDelay(e.target.value);
-          useAlgoStore.getState().setDelay(e.target.value);
-        }}
+        aria-label="delay"
       />
       <h1 className="text-2xl">{useAlgoStore.getState().delay}</h1>
     </div>

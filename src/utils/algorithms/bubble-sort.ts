@@ -1,8 +1,5 @@
-// Optimized bubble sort
+import { accessArray, swap, checkSorted } from "../array";
 
-import { accessArray, swap } from "../array";
-
-// All elements after the last swap are sorted, no need to perform useless checks and swaps
 const bubbleSort = (
   array: number[],
   states: number[],
@@ -21,6 +18,8 @@ const bubbleSort = (
     }
     n = newn;
   } while (n > 1);
+
+  checkSorted(array);
 };
 
 export default bubbleSort;

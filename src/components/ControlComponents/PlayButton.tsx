@@ -1,8 +1,9 @@
-import React from "react";
 import { useState } from "react";
 import { FiPlay, FiPause } from "react-icons/fi";
-import { useAlgoStore } from "../../utils/store";
+import useAlgoStore from "../../utils/store";
 import { sort } from "../../utils/array";
+
+const isSorted = useAlgoStore.getState().isSorted;
 
 function PlayButton() {
   const [isPlaying, setIsPlaying] = useState(false);
@@ -32,7 +33,11 @@ function PlayButton() {
       useAlgoStore
         .getState()
         .setAnimationIndex(useAlgoStore.getState().animationIndex + 1);
-      await setTimeout(useAlgoStore.getState().delay);
+      await new Promise((resolve) =>
+        setTimeout(() => {
+          resolve(null);
+        }, useAlgoStore.getState().delay)
+      );
     }
     useAlgoStore.setState({
       isAnimating: false,
@@ -42,13 +47,13 @@ function PlayButton() {
   return (
     <div className="pt-1">
       <button
-        className="btn "
+        className="btn play-btn "
         onClick={() => {
           setIsPlaying(!isPlaying);
           playPause();
         }}
       >
-        {isPlaying ? (
+        {isPlaying || isSorted ? (
           <FiPause className="text-2xl" />
         ) : (
           <FiPlay className="text-2xl" />

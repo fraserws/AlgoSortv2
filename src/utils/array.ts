@@ -1,4 +1,4 @@
-import { useAlgoStore } from "./store";
+import useAlgoStore from "./store";
 import bubbleSort from "./algorithms/bubble-sort";
 
 export const algorithms = new Map([["bubbleSort", bubbleSort]]);
@@ -64,4 +64,19 @@ export const swap = (arr: number[], i: number, j: number): number[] => {
   arr[i] = arr[j] as number;
   arr[j] = t;
   return arr;
+};
+
+export const checkSorted = (array: number[]): boolean => {
+  for (let i = 0; i < array.length - 1; i++) {
+    if (array[i] > array[i + 1]) {
+      useAlgoStore.setState({
+        isSorted: false,
+      });
+      return false;
+    }
+  }
+  useAlgoStore.setState({
+    isSorted: true,
+  });
+  return true;
 };
