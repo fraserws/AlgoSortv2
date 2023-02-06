@@ -23,7 +23,7 @@ function SizeSlider() {
           useAlgoStore.getState().setSize(parseInt(e.target.value));
         }}
       />
-      <h1 className="text-2xl">{size}</h1>
+      <h1 className="text-2xl text-black">{size}</h1>
     </div>
   );
 }

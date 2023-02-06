@@ -1,5 +1,6 @@
 import { swap } from "../../utils/array";
 import useAlgoStore from "../../utils/store";
+import { AiOutlineReload } from "react-icons/ai";
 
 const array = useAlgoStore.getState().array;
 
@@ -11,16 +12,14 @@ function NewArrayBtn() {
 
   return (
     <div>
-      <button onClick={newArray} className="btn btn-secondary new-array-button">
-        Generate New Array
-      </button>
       <button
-        onClick={() => {
-          console.log(array);
-          swap(array, 0, 1);
-          console.log(array);
-        }}
-      ></button>
+        onClick={newArray}
+        //buttons do not have accesible names
+        aria-label="New Array"
+        className="btn btn-secondary new-array-button text-black"
+      >
+        <AiOutlineReload className="text-2xl" />
+      </button>
     </div>
   );
 }

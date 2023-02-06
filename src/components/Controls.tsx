@@ -10,9 +10,8 @@ function Controls() {
       <div className="flex flex-row gap-10">
         <NewArrayBtn />
         <SizeSlider />
-        <DelaySlider />
-        <AlgoSelector />
         <PlayButton />
+        <AlgoSelector />
       </div>
     </div>
   );

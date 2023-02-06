@@ -16,7 +16,7 @@ function DelaySlider() {
         value={delay}
         aria-label="delay"
       />
-      <h1 className="text-2xl">{useAlgoStore.getState().delay}</h1>
+      <h1 className="text-2xl text-black">{useAlgoStore.getState().delay}</h1>
     </div>
   );
 }

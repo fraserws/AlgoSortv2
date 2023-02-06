@@ -1,18 +1,31 @@
 import React from "react";
+import { algorithms } from "../../utils/array";
+import useAlgoStore from "../../utils/store";
+
+//export const algorithms = new Map([
+//  ["Bubble Sort", bubbleSort],
+// ["Bogo Sort", bogoSort],
+//]);
 
 function AlgoSelector() {
+  const names: string[] = [];
+  algorithms.forEach((value, key) => {
+    names.push(key);
+  });
+  console.log(names);
+
   return (
-    <div className="dropdown dropdown-top">
-      <label tabIndex={0} className="btn m-1">
-        Click
-      </label>
-      <ul
-        tabIndex={0}
-        className="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-52"
+    <div className="flex-row flex items-center">
+      <select
+        className="select"
+        onChange={(e) => {
+          useAlgoStore.setState({ algorithm: e.target.value as string });
+        }}
       >
-        <li>Item 1</li>
-        <li>Item 2</li>
-      </ul>
+        {names.map((name) => (
+          <option value={name}>{name}</option>
+        ))}
+      </select>
     </div>
   );
 }

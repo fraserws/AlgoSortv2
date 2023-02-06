@@ -1,7 +1,13 @@
 import useAlgoStore from "./store";
 import bubbleSort from "./algorithms/bubble-sort";
+import bogoSort from "./algorithms/bogo-sort";
+import runMergeSort from "./algorithms/merge-sort";
 
-export const algorithms = new Map([["bubbleSort", bubbleSort]]);
+export const algorithms = new Map([
+  ["Bubble Sort", bubbleSort],
+  ["Bogo Sort", bogoSort],
+  ["Merge Sort", runMergeSort],
+]);
 
 export const randomArray = (length: number): number[] => {
   const arr = new Array(length);

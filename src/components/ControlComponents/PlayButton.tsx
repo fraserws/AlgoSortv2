@@ -9,7 +9,6 @@ function PlayButton() {
   const [isPlaying, setIsPlaying] = useState(false);
   //@ts-ignore
   const isAnimating = useAlgoStore((state) => state.isAnimating);
-  console.log(isAnimating);
   const playPause = async () => {
     useAlgoStore.setState({ isAnimating: !isAnimating });
     if (!useAlgoStore.getState().isSorted) {
@@ -47,11 +46,12 @@ function PlayButton() {
   return (
     <div className="pt-1">
       <button
-        className="btn play-btn "
+        className="btn play-pause-button  "
         onClick={() => {
           setIsPlaying(!isPlaying);
           playPause();
         }}
+        aria-label={isPlaying ? "Pause" : "Play"}
       >
         {isPlaying || isSorted ? (
           <FiPause className="text-2xl" />
